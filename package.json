@@ -1,0 +1,22 @@
+{
+  "name": "issue-tracking-system-softuni",
+  "version": "1.0.0",
+  "description": "Peter Beleganski",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterbeleganski/issue-tracking-system-Softuni.git"
+  },
+  "author": "Peter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peterbeleganski/issue-tracking-system-Softuni/issues"
+  },
+  "homepage": "https://github.com/peterbeleganski/issue-tracking-system-Softuni#readme",
+  "dependencies": {
+    "angular": "^1.5.3"
+  }
+}
