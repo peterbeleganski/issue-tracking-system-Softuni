@@ -5,25 +5,25 @@
             <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputEmail" ng-model="user.email" placeholder="Email">
+                    <input type="text" class="form-control" id="inputEmail" ng-model="register.email" placeholder="Email">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputPassword" class="col-lg-2 control-label">Password</label>
                 <div class="col-lg-10">
-                    <input type="password" class="form-control" id="inputPassword" ng-model="user.password" placeholder="Password">
+                    <input type="password" class="form-control" id="inputPassword" ng-model="register.password" placeholder="Password">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputConfirmPassword" class="col-lg-2 control-label">Confirm Password</label>
                 <div class="col-lg-10">
-                    <input type="password" class="form-control" id="inputConfirmPassword" ng-model="user.confirmPassword" placeholder="Confirm Password">
+                    <input type="password" class="form-control" id="inputConfirmPassword" ng-model="register.confirmPassword" placeholder="Confirm Password">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
                     <button type="reset" class="btn btn-default">Cancel</button>
-                    <button type="submit" class="btn btn-primary" ng-click="register(user)">Submit</button>
+                    <button type="submit" class="btn btn-primary" ng-click="register(register)">Submit</button>
                 </div>
             </div>
         </fieldset>
