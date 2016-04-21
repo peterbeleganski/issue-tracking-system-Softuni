@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('userData',['$resource','baseUrl' , '$http', '$q',function($resource, baseUrl, $http, $q){
+app.factory('userData',['$resource','baseUrl' , '$http', '$q','auth',function($resource, baseUrl, $http, $q, auth){
     function registerUser(user) {
         var deferred = $q.defer();
 
@@ -33,6 +33,20 @@ app.factory('userData',['$resource','baseUrl' , '$http', '$q',function($resource
         return deferred.promise;
     }
 
+    function getCurrentUserDetails(){
+        var deferred = $q.defer();
+
+        $http.get(baseUrl + 'Users/me',{
+            headers:auth.getHeaders()
+        }).then(function(response) {
+            deferred.resolve(response);
+        }, function(err){
+            deferred.reject(err);
+        });
+
+        return deferred.promise;
+    }
+
     function logoutUser() {
 
     }
@@ -40,6 +54,7 @@ app.factory('userData',['$resource','baseUrl' , '$http', '$q',function($resource
     return {
         register: registerUser,
         login: loginUser,
-        logout: logoutUser
+        logout: logoutUser,
+        getCurrentUserDetails: getCurrentUserDetails
     }
 }]);

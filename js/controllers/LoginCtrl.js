@@ -8,5 +8,15 @@ app.controller('LoginCtrl',['$scope','userData','auth', function($scope, userDat
         }, function(err) {
             console.log(err);
         });
+    };
+
+    $scope.test = function(){
+        userData.getCurrentUserDetails().then(function(response) {
+            console.log("Success response for current user:");
+            console.log(response);
+        }, function(error) {
+            console.log("Error response");
+            console.log(error);
+        });
     }
 }]);

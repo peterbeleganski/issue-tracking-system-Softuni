@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('auth', [function(){
+app.factory('auth', [function(userData){
 
     var key = 'user';
 
@@ -9,15 +9,15 @@ app.factory('auth', [function(){
     }
 
     function getUserData(){
-        return angular.toJson(localStorage.getItem(key));
+        return angular.fromJson(localStorage.getItem(key));
     }
 
     function getHeaders(){
         var headers = {};
-        var userData = getUserData();
+        var getUserData = angular.fromJson(localStorage.getItem(key));
 
-        if(userData){
-            headers.Authorization = 'Bearer ' + userData().access_token;
+        if(getUserData){
+            headers.Authorization = 'Bearer ' + getUserData.access_token;
         }
 
         return headers;
@@ -27,11 +27,22 @@ app.factory('auth', [function(){
         localStorage.removeItem(key);
     }
 
+    function isLoggedIn(){
+        return !!getUserData();
+    }
+
+    function isAdmin(){
+        var currUser = userData.getCurrentUserDetails().data;
+
+        return currUser.isAdmin === "true";
+
+    }
+
     return {
         saveUser:setUserData,
         getUser: getUserData,
         getHeaders: getHeaders,
-        logoutUser: logoutUser
-
+        logoutUser: logoutUser,
+        isLoggedIn:isLoggedIn
     }
 }]);
