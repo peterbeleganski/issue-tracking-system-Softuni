@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row" ng-hide="currUser.user">
+    <div class="row" ng-hide="authenticate()">
         <div class="col-md-6">
             <login-form></login-form>
         </div>
@@ -8,5 +8,8 @@
             <register-form></register-form>
         </div>
     </div>
+    <div ng-if="authenticate()">
+        <dashboard></dashboard>
     </div>
+
 </div>

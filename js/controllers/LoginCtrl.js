@@ -5,18 +5,15 @@ app.controller('LoginCtrl',['$scope','userData','auth', function($scope, userDat
         userData.login(user).then(function(loggedInUser){
             console.log(loggedInUser);
             auth.saveUser(loggedInUser.data);
+            userData.getCurrentUserDetails().then(function(response) {
+                auth.saveDetailsForCurrentUser(response.data);
+            }, function(errorResponse) {
+                console.log("Error getting details for current User");
+                console.log(errorResponse);
+            })
         }, function(err) {
             console.log(err);
         });
     };
 
-    $scope.test = function(){
-        userData.getCurrentUserDetails().then(function(response) {
-            console.log("Success response for current user:");
-            console.log(response);
-        }, function(error) {
-            console.log("Error response");
-            console.log(error);
-        });
-    }
 }]);

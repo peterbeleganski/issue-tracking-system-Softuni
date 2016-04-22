@@ -22,9 +22,9 @@
             </button>
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" ng-controller="HomeCtrl" ng-show="authenticate()">
                 <li>
-                    <a href="#/dashboard">Dashboard</a>
+                    <a href="#/">Dashboard</a>
                 </li>
                 <li>
                     <a href="#/projects">Projects</a>
@@ -50,6 +50,10 @@
 <script src="js/controllers/RegisterCtrl.js"></script>
 <script src="js/services/data/userData.js"></script>
 <script src="js/services/auth.js"></script>
+<script src="js/directives/dashboard.js"></script>
+<script src="js/controllers/DashboardCtrl.js"></script>
+<script src="js/controllers/ProjectCtrl.js"></script>
+<script src="js/services/data/projectData.js"></script>
 
 </body>
 </html>

@@ -35,7 +35,14 @@ app.factory('auth', [function(userData){
         var currUser = userData.getCurrentUserDetails().data;
 
         return currUser.isAdmin === "true";
+    }
 
+    function saveDetailsForCurrentUser(data){
+        localStorage.setItem('details',angular.toJson(data));
+    }
+
+    function getDetailsForCurrentUser(){
+        return angular.fromJson(localStorage.getItem('details'));
     }
 
     return {
@@ -43,6 +50,8 @@ app.factory('auth', [function(userData){
         getUser: getUserData,
         getHeaders: getHeaders,
         logoutUser: logoutUser,
-        isLoggedIn:isLoggedIn
+        isLoggedIn:isLoggedIn,
+        saveDetailsForCurrentUser:saveDetailsForCurrentUser,
+        getDetailsForCurrentUser: getDetailsForCurrentUser
     }
 }]);

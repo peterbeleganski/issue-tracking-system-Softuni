@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-md-8">
+        <h2>Dashboard</h2>
+        <h2>Affiliated Projects</h2>
+        <img src="https://d13yacurqjgara.cloudfront.net/users/82092/screenshots/1073359/spinner.gif" alt="loading" ng-hide="loading()"/>
+        <ul class="list-group" ng-cloak>
+            <li ng-repeat="project in projects" class="list-group-item">
+                <p>{{project.Name}}</p>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+</div>
