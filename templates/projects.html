@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="page-header">
+        <h1>Projects <small>All projects</small></h1>
+    </div>
+    <img width="200px" src="https://d13yacurqjgara.cloudfront.net/users/82092/screenshots/1073359/spinner.gif" alt="loading" ng-hide="loading()"/>
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group" ng-cloak>
+                <li ng-repeat="project in projects" class="list-group-item">
+                    <p>
+                        <strong>{{project.Name}}</strong>
+                        <button class="btn btn-sm btn-info">View</button>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <button class="btn btn-success">Add project</button>
+
+</div>

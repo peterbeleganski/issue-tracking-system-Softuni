@@ -49,6 +49,7 @@ app.factory('auth', [function(userData){
         saveUser:setUserData,
         getUser: getUserData,
         getHeaders: getHeaders,
+        isAdmin:isAdmin,
         logoutUser: logoutUser,
         isLoggedIn:isLoggedIn,
         saveDetailsForCurrentUser:saveDetailsForCurrentUser,
