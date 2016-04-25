@@ -1,0 +1,16 @@
+<div class="container">
+   <h3>{{project.ProjectKey}}</h3>
+    <button class="btn btn-default">Edit</button>
+    <button class="btn btn-default">Add issue</button>
+    <br/>
+    <br/>
+    <p><strong>Name: </strong>{{project.Name}}</p>
+    <p><strong>Description: </strong>{{project.Description}}</p>
+    <p><strong>LeadId:</strong>(currentId:{{project.Lead.Id}}) <span class="text-danger">{{project.Lead.Username}}</span></p>
+    <p><strong>Labels:</strong>
+        <span ng-repeat="label in project.Labels">{{label.Name}},&nbsp;</span>
+    </p>
+    <p><strong>Priorities:</strong>
+        <span ng-repeat="priority in project.Priorities">{{priority.Name}},&nbsp;</span>
+    </p>
+</div>

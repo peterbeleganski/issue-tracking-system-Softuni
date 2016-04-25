@@ -9,7 +9,7 @@
                 <li ng-repeat="project in projects" class="list-group-item">
                     <p>
                         <strong>{{project.Name}}</strong>
-                        <button class="btn btn-sm btn-info">View</button>
+                        <a href="#/projects/{{project.Id}}" class="btn btn-sm btn-info">View</a>
                     </p>
                 </li>
             </ul>

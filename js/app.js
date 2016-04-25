@@ -34,6 +34,13 @@ app.config(['$routeProvider', function($routeProvider) {
                 authenticate: true
             }
         })
+        .when('/projects/:id', {
+            templateUrl:'templates/project-details.html',
+            controller:'ProjectDetailsCtrl',
+            access: {
+                authenticate: true
+            }
+        })
 }]);
 
 app.run(function($rootScope, $location, auth,notifier) {

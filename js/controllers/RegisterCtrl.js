@@ -2,6 +2,17 @@
 
 app.controller('RegisterCtrl', ['$scope','userData','auth','notifier', function($scope, userData, auth, notifier) {
     $scope.register = function(user){
+
+        if($scope.register.confirmPassword !== $scope.register.password){
+            notifier.error('Passwords do not match!');
+            return;
+        }
+
+        if($scope.register.password.length < 6){
+            notifier.error('passwords must be more than 6  symbols!');
+            return;
+        }
+
         userData.register(user).then(function(response) {
             userData.login(user).then(function(result) {
                 notifier.success("Registered successful!!!");
@@ -15,5 +26,6 @@ app.controller('RegisterCtrl', ['$scope','userData','auth','notifier', function(
             console.log(err);
             notifier.error("Registration failed!");
         });
+
     }
 }]);
