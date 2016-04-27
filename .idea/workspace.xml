@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dda40b7b-e0df-4239-9ced-673309998e81" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/controllers/users/ChangePasswordCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/controllers/issues/IssueDetailsCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/users/change-password.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/issues/issue-details.html" />
-      <change type="MOVED" beforePath="C:\Users\peterbeleganski\Desktop\Project-softuni-angular\issue-tracking-system-Softuni\js\controllers\DashboardCtrl.js" afterPath="$PROJECT_DIR$/js/controllers/users/DashboardCtrl.js" />
-      <change type="MOVED" beforePath="C:\Users\peterbeleganski\Desktop\Project-softuni-angular\issue-tracking-system-Softuni\js\controllers\HomeCtrl.js" afterPath="$PROJECT_DIR$/js/controllers/users/HomeCtrl.js" />
-      <change type="MOVED" beforePath="C:\Users\peterbeleganski\Desktop\Project-softuni-angular\issue-tracking-system-Softuni\js\controllers\LoginCtrl.js" afterPath="$PROJECT_DIR$/js/controllers/users/LoginCtrl.js" />
-      <change type="MOVED" beforePath="C:\Users\peterbeleganski\Desktop\Project-softuni-angular\issue-tracking-system-Softuni\js\controllers\ProjectCtrl.js" afterPath="$PROJECT_DIR$/js/controllers/projects/ProjectCtrl.js" />
-      <change type="MOVED" beforePath="C:\Users\peterbeleganski\Desktop\Project-softuni-angular\issue-tracking-system-Softuni\js\controllers\ProjectDetailsCtrl.js" afterPath="$PROJECT_DIR$/js/controllers/projects/ProjectDetailsCtrl.js" />
-      <change type="MOVED" beforePath="C:\Users\peterbeleganski\Desktop\Project-softuni-angular\issue-tracking-system-Softuni\js\controllers\RegisterCtrl.js" afterPath="$PROJECT_DIR$/js/controllers/users/RegisterCtrl.js" />
-      <change type="MOVED" beforePath="C:\Users\peterbeleganski\Desktop\Project-softuni-angular\issue-tracking-system-Softuni\templates\add-project.html" afterPath="$PROJECT_DIR$/templates/projects/add-project.html" />
-      <change type="MOVED" beforePath="C:\Users\peterbeleganski\Desktop\Project-softuni-angular\issue-tracking-system-Softuni\templates\project-details.html" afterPath="$PROJECT_DIR$/templates/projects/project-details.html" />
-      <change type="MOVED" beforePath="C:\Users\peterbeleganski\Desktop\Project-softuni-angular\issue-tracking-system-Softuni\templates\projects.html" afterPath="$PROJECT_DIR$/templates/projects/projects.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/data/issuesData.js" afterPath="$PROJECT_DIR$/js/services/data/issuesData.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/data/userData.js" afterPath="$PROJECT_DIR$/js/services/data/userData.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/issues/IssueDetailsCtrl.js" afterPath="$PROJECT_DIR$/js/controllers/issues/IssueDetailsCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="issue-tracking-system-Softuni.iws" />
@@ -63,8 +47,8 @@
       <file leaf-file-name="IssueDetailsCtrl.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllers/issues/IssueDetailsCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33949944">
-              <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.5484222">
+              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -954,8 +938,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers/issues/IssueDetailsCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33949944">
-          <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.5484222">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
           <folding />
         </state>
       </provider>
