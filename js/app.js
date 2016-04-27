@@ -45,7 +45,6 @@ app.config(['$routeProvider', function($routeProvider) {
 
 app.run(function($rootScope, $location, auth,notifier) {
     $rootScope.$on('$routeChangeStart', function(e, curr, prev){
-
         if(curr.$$route.access.authenticate){
            console.log("require login");
             if(auth.getUser() === null){

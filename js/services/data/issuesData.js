@@ -1,9 +1,10 @@
-app.factory('projectData', ['$http','baseUrl','auth', '$q',function($http, baseUrl, auth, $q){
+app.factory('issuesData',['$q','$http','auth','baseUrl',function($q, $http, auth, baseUrl){
 
-    function getAllProjects(){
+    function getMy() {
+
         var deferred = $q.defer();
 
-        $http.get(baseUrl + 'projects',{
+        $http.get(baseUrl + 'issues/me?pageSize=100000&pageNumber=1&orderBy=Project.Name',{
             headers:auth.getHeaders()
         }).then(function(response) {
             deferred.resolve(response);
@@ -14,10 +15,10 @@ app.factory('projectData', ['$http','baseUrl','auth', '$q',function($http, baseU
         return deferred.promise;
     }
 
-    function getProjectById(id){
+    function getByProjectId(id){
         var deferred = $q.defer();
 
-        $http.get(baseUrl + 'Projects/' + id,{
+        $http.get(baseUrl + 'projects/' + id + '/issues',{
             headers:auth.getHeaders()
         }).then(function(response) {
             deferred.resolve(response);
@@ -28,15 +29,8 @@ app.factory('projectData', ['$http','baseUrl','auth', '$q',function($http, baseU
         return deferred.promise;
     }
 
-    function addProject(project) {
-
-    }
-
-
-    return{
-        allProjects: getAllProjects,
-        projectById: getProjectById,
-        addProject: addProject
-
+    return {
+        getMyIssues:getMy,
+        getIssuesByProjectId:getByProjectId
     }
 }]);

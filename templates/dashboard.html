@@ -1,15 +1,31 @@
 <div class="row">
-    <div class="col-md-8">
-        <h2>Dashboard</h2>
+    <h2>Dashboard</h2>
+    <div class="col-md-4">
         <h2>Affiliated Projects</h2>
         <img width="200px" src="https://d13yacurqjgara.cloudfront.net/users/82092/screenshots/1073359/spinner.gif" alt="loading" ng-hide="loading()"/>
+        <p ng-show="isEmptyMyProjects()" ng-cloak class="text-danger">You do not have any projects. You can create one:</p>
+        <a class="btn btn-success" ng-cloak ng-show="isEmptyMyProjects()" href="">Add new Project</a>
         <ul class="list-group" ng-cloak>
-            <li ng-repeat="project in projects" class="list-group-item">
-                <p>{{project.Name}}</p>
+            <li ng-repeat="project in myProjects" class="list-group-item">
+                <p><a href="#/projects/{{project.Id}}">{{project.Name}}</a></p>
             </li>
         </ul>
     </div>
     <div class="col-md-4">
-
+        <h2>Assigned Projects</h2>
+        <img width="200px" src="https://d13yacurqjgara.cloudfront.net/users/82092/screenshots/1073359/spinner.gif" alt="loading" ng-hide="loadingAllProjects()"/>
+        <ul class="list-group" ng-cloak>
+            <li ng-repeat="project in allProjects" class="list-group-item">
+                <p><a href="#/projects/{{project.Id}}">{{project.Name}}</a></p>
+            </li>
+        </ul>
+    </div>
+    <div id="issues" class="col-md-4">
+        <h3>Assigned Issues</h3>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="issue in issues">
+                <a href="#/issues/{{ issue.Id }}">{{ issue.Title }}</a>
+            </li>
+        </ul>
     </div>
 </div>

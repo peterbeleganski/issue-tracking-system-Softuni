@@ -1,17 +1,25 @@
-app.controller('ProjectDetailsCtrl',['$scope','$http','$routeParams','baseUrl','auth',function($scope, $http, $routeParams, baseUrl, auth){
+app.controller('ProjectDetailsCtrl',['$scope','$routeParams','auth','projectData','issuesData',function($scope, $routeParams,auth,projectData, issuesData){
     $scope.project = undefined;
+    $scope.issues = undefined;
+    var id = $routeParams.id;
 
-    $http.get(baseUrl + 'Projects/' + $routeParams.id, {
-        headers:auth.getHeaders()
-    }).then(function(response) {
+
+    projectData.projectById(id).then(function(response) {
         $scope.project = response.data;
-        console.log(response);
-    },function(err){
+        $scope.showButtons = function(){
+            var user = auth.getDetailsForCurrentUser();
+
+            return $scope.project.Lead.Id === user.Id;
+
+        }
+    }, function(err) {
         console.log(err);
     });
 
-    $scope.showButtons = function(){
-        
-    }
+    issuesData.getIssuesByProjectId(id).then(function(response) {
+        console.log(response.data);
+        $scope.issues = response.data;
+    });
+
 
 }]);

@@ -1,16 +1,46 @@
 <div class="container">
-   <h3>{{project.ProjectKey}}</h3>
-    <button class="btn btn-default">Edit</button>
-    <button class="btn btn-default">Add issue</button>
-    <br/>
-    <br/>
-    <p><strong>Name: </strong>{{project.Name}}</p>
-    <p><strong>Description: </strong>{{project.Description}}</p>
-    <p><strong>LeadId:</strong>(currentId:{{project.Lead.Id}}) <span class="text-danger">{{project.Lead.Username}}</span></p>
-    <p><strong>Labels:</strong>
-        <span ng-repeat="label in project.Labels">{{label.Name}},&nbsp;</span>
-    </p>
-    <p><strong>Priorities:</strong>
-        <span ng-repeat="priority in project.Priorities">{{priority.Name}},&nbsp;</span>
-    </p>
+    <div class="row">
+        <div class="col-md-5">
+            <h3>{{project.ProjectKey}}</h3>
+            <button class="btn btn-default" ng-show="showButtons()">Edit</button>
+            <button class="btn btn-default" ng-show="showButtons()">Add issue</button>
+            <br/>
+            <br/>
+            <p><strong>Name: </strong>{{project.Name}}</p>
+            <p><strong>Description: </strong>{{project.Description}}</p>
+            <p><strong>LeadId:</strong>(currentId:{{project.Lead.Id}}) <span class="text-danger">{{project.Lead.Username}}</span></p>
+            <p><strong>Labels:</strong>
+                <span ng-repeat="label in project.Labels">{{label.Name}},&nbsp;</span>
+            </p>
+            <p><strong>Priorities:</strong>
+                <span ng-repeat="priority in project.Priorities">{{priority.Name}},&nbsp;</span>
+            </p>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Due date</th>
+                    <th>Assignee</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="issue in issues">
+                    <td>
+                        <a href="#/issues/{{issue.Id}}">{{ issue.Title }}</a>
+                    </td>
+                    <td>{{issue.Description}}</td>
+                    <td>{{issue.DueDate}}</td>
+                    <td>{{issue.Assignee.Username}}</td>
+                </tr>
+
+                </tbody>
+            </table>
+         </div>
+
+    </div>
+
+
 </div>
