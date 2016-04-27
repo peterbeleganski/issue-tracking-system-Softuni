@@ -51,10 +51,27 @@ app.factory('userData',['$resource','baseUrl' , '$http', '$q','auth',function($r
 
     }
 
+    function changePasswords(passwords) {
+
+        var deferred = $q.defer();
+
+        $http.post(baseUrl + 'api/Account/ChangePassword',passwords,{
+            headers:auth.getHeaders()
+        }).then(function(response) {
+            deferred.resolve(response);
+        }, function(err){
+            deferred.reject(err);
+        });
+
+        return deferred.promise;
+
+    }
+
     return {
         register: registerUser,
         login: loginUser,
         logout: logoutUser,
-        getCurrentUserDetails: getCurrentUserDetails
+        getCurrentUserDetails: getCurrentUserDetails,
+        changePasswords:changePasswords
     }
 }]);

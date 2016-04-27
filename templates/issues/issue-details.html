@@ -1,0 +1,25 @@
+<div class="col-md-6 col-md-offset-3">
+    <h2><strong>Title:</strong>{{ issue.Title }}</h2>
+    <button class="btn btn-success" ng-show="showButtons()">Edit</button>
+    <hr>
+    <div class="jumbotron">
+        <p><strong>Description:</strong>{{ issue.Description }}</p>
+    </div>
+    <h4>Assignee: {{ issue.Assignee.Username }}</h4>
+    <h4>Due Date: {{ issue.DueDate }}</h4>
+    <h4>Priority: {{ issue.Priority.Name }}</h4>
+    <h4>Status: {{ issue.Status.Name }}</h4>
+    <h4>Author: {{ issue.Author.Username }}</h4>
+    <div id="labels">
+        <ul class="list-group">
+            <li class="list-group-item disabled">Labels</li>
+            <li class="list-group-item" ng-repeat="label in issue.Labels">{{ label.Name }}</li>
+        </ul>
+    </div>
+    <div id="comments">
+        <ul class="list-group">
+            <li class="list-group-item disabled">Comments</li>
+            <li class="list-group-item" ng-repeat="comment in   comments">{{ comment.Text }}</li>
+        </ul>
+    </div>
+</div>

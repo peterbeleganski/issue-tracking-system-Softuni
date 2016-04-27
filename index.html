@@ -30,6 +30,9 @@
                     <a href="#/projects">Projects</a>
                 </li>
                 <li>
+                    <a href="#/profile/password">Change Password</a>
+                </li>
+                <li>
                     <a href="#/" ng-click="logout()">Logout</a>
                 </li>
             </ul>
@@ -47,20 +50,22 @@
 <script src="node_modules/noty/js/noty/packaged/jquery.noty.packaged.js"></script>
 
 <script src="js/app.js"></script>
-<script src="js/controllers/HomeCtrl.js"></script>
+<script src="js/controllers/users/HomeCtrl.js"></script>
 <script src="js/directives/login.js"></script>
 <script src="js/directives/register.js"></script>
-<script src="js/controllers/LoginCtrl.js"></script>
-<script src="js/controllers/RegisterCtrl.js"></script>
+<script src="js/controllers/users/LoginCtrl.js"></script>
+<script src="js/controllers/users/RegisterCtrl.js"></script>
 <script src="js/services/data/userData.js"></script>
 <script src="js/services/auth.js"></script>
 <script src="js/directives/dashboard.js"></script>
-<script src="js/controllers/DashboardCtrl.js"></script>
-<script src="js/controllers/ProjectCtrl.js"></script>
+<script src="js/controllers/users/DashboardCtrl.js"></script>
+<script src="js/controllers/projects/ProjectCtrl.js"></script>
 <script src="js/services/data/projectData.js"></script>
 <script src="js/services/common/notifier.js"></script>
-<script src="js/controllers/ProjectDetailsCtrl.js"></script>
+<script src="js/controllers/projects/ProjectDetailsCtrl.js"></script>
 <script src="js/services/data/issuesData.js"></script>
+<script src="js/controllers/users/ChangePasswordCtrl.js"></script>
+<script src="js/controllers/issues/IssueDetailsCtrl.js"></script>
 
 </body>
 </html>

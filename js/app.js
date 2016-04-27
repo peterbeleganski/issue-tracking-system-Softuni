@@ -28,17 +28,39 @@ app.config(['$routeProvider', function($routeProvider) {
                 }
         })
         .when('/projects',{
-            templateUrl:'templates/projects.html',
+            templateUrl:'templates/projects/projects.html',
             controller:'ProjectCtrl',
             access: {
                 authenticate: true
             }
         })
         .when('/projects/:id', {
-            templateUrl:'templates/project-details.html',
+            templateUrl:'templates/projects/project-details.html',
             controller:'ProjectDetailsCtrl',
             access: {
                 authenticate: true
+            }
+        })
+        .when('/projects/add', {
+            templateUrl:'templates/projects/add-projects.html',
+            controller:'AddProjectCtrl',
+            access: {
+                authenticate:true,
+                isAdmin:true
+            }
+        })
+        .when('/profile/password',{
+            templateUrl:'templates/users/change-password.html',
+            controller:'ChangePasswordCtrl',
+            access: {
+                authenticate:true
+            }
+        })
+        .when('/issues/:id', {
+            controller: 'IssueDetailsCtrl',
+            templateUrl: 'templates/issues/issue-details.html',
+            access: {
+               authenticate:true
             }
         })
 }]);
