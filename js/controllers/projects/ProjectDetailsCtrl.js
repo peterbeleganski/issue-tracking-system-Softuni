@@ -1,4 +1,4 @@
-app.controller('ProjectDetailsCtrl',['$scope','$routeParams','auth','projectData','issuesData',function($scope, $routeParams,auth,projectData, issuesData){
+app.controller('ProjectDetailsCtrl',['$scope','$routeParams','auth','projectData','issuesData','$location',function($scope, $routeParams,auth,projectData, issuesData,$location){
     $scope.project = undefined;
     $scope.issues = undefined;
     var id = $routeParams.id;
@@ -21,5 +21,9 @@ app.controller('ProjectDetailsCtrl',['$scope','$routeParams','auth','projectData
         $scope.issues = response.data;
     });
 
+    $scope.addIssue = function(projectId){
+        console.log(projectId);
+        $location.path('/projects/' + projectId + '/add-issue');
+    }
 
 }]);

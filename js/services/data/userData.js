@@ -51,6 +51,21 @@ app.factory('userData',['$resource','baseUrl' , '$http', '$q','auth',function($r
 
     }
 
+    function getAllUsers() {
+        var deferred = $q.defer();
+
+        $http.get(baseUrl + 'Users',{
+            headers:auth.getHeaders()
+        }).then(function(response){
+            deferred.resolve(response);
+        }, function(error){
+            deferred.reject(error);
+        });
+
+        return deferred.promise;
+
+    }
+
     function changePasswords(passwords) {
 
         var deferred = $q.defer();
@@ -72,6 +87,7 @@ app.factory('userData',['$resource','baseUrl' , '$http', '$q','auth',function($r
         login: loginUser,
         logout: logoutUser,
         getCurrentUserDetails: getCurrentUserDetails,
-        changePasswords:changePasswords
+        changePasswords:changePasswords,
+        getAllUsers: getAllUsers
     }
 }]);

@@ -45,8 +45,7 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl:'templates/projects/add-projects.html',
             controller:'AddProjectCtrl',
             access: {
-                authenticate:true,
-                isAdmin:true
+                authenticate:true
             }
         })
         .when('/profile/password',{
@@ -61,6 +60,13 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'templates/issues/issue-details.html',
             access: {
                authenticate:true
+            }
+        })
+        .when('/projects/:id/add-issue', {
+            controller: 'AddIssueController',
+            templateUrl: 'templates/issues/add-issue.html',
+            access: {
+                authenticate: true
             }
         })
 }]);

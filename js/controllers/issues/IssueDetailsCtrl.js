@@ -19,8 +19,6 @@ app.controller('IssueDetailsCtrl',['$scope','issuesData','$routeParams','project
             $scope.project = projectResponse.data;
         });
 
-        
-
     });
 
     issuesData.getComments(id).then(function(response) {
