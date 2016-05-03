@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-5">
             <h3>{{project.ProjectKey}}</h3>
-            <button class="btn btn-default" ng-show="showButtons()">Edit</button>
+            <button class="btn btn-default" ng-show="showButtons()" ng-click="goToEdit(project.Id)">Edit</button>
             <button class="btn btn-default" ng-show="showButtons()" ng-click="addIssue(project.Id)" >Add issue</button>
             <br/>
             <br/>

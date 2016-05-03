@@ -1,4 +1,4 @@
-app.controller('IssueDetailsCtrl',['$scope','issuesData','$routeParams','projectData','auth', function($scope, issuesData, $routeParams, projectData, auth){
+app.controller('IssueDetailsCtrl',['$scope','issuesData','$routeParams','projectData','auth','$location', function($scope, issuesData, $routeParams, projectData, auth, $location){
     var id = $routeParams.id;
     $scope.issue = undefined;
     $scope.project = undefined;
@@ -24,4 +24,8 @@ app.controller('IssueDetailsCtrl',['$scope','issuesData','$routeParams','project
     issuesData.getComments(id).then(function(response) {
        $scope.comments = response.data;
     });
+
+    $scope.goToEditIssue = function(id){
+        $location.path('/issues/'+id+'/edit');
+    }
 }]);

@@ -24,6 +24,10 @@ app.controller('ProjectDetailsCtrl',['$scope','$routeParams','auth','projectData
     $scope.addIssue = function(projectId){
         console.log(projectId);
         $location.path('/projects/' + projectId + '/add-issue');
+    };
+
+    $scope.goToEdit = function(id){
+        $location.path('/projects/'+id+'/edit');
     }
 
 }]);

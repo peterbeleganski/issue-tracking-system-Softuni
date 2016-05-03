@@ -69,10 +69,27 @@ app.config(['$routeProvider', function($routeProvider) {
                 authenticate: true
             }
         })
+        .when('/projects/:id/edit', {
+            controller: 'EditProjectCtrl',
+            templateUrl: 'templates/projects/edit-project.html',
+            access: {
+                authenticate: true
+            }
+        })
+        .when('/issues/:id/edit', {
+            controller: 'EditIssueCtrl',
+            templateUrl: 'templates/issues/edit-issue.html',
+            access: {
+                authenticate: true
+            }
+        })
 }]);
 
 app.run(function($rootScope, $location, auth,notifier) {
     $rootScope.$on('$routeChangeStart', function(e, curr, prev){
+
+        $rootScope.userId = angular.fromJson(localStorage.getItem('details')).Id;
+
         if(curr.$$route.access.authenticate){
            console.log("require login");
             if(auth.getUser() === null){

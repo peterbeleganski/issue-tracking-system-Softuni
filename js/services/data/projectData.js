@@ -32,11 +32,25 @@ app.factory('projectData', ['$http','baseUrl','auth', '$q',function($http, baseU
 
     }
 
+    function editProject(id, project) {
+        var deferred = $q.defer();
+
+        $http.put(baseUrl + 'Projects/' + id,project,{
+            headers:auth.getHeaders()
+        }).then(function(response) {
+            deferred.resolve(response);
+        }, function(err){
+            deferred.reject(err);
+        });
+
+        return deferred.promise;
+    }
+
 
     return{
         allProjects: getAllProjects,
         projectById: getProjectById,
-        addProject: addProject
-
+        addProject: addProject,
+        editProject:editProject
     }
 }]);

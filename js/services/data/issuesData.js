@@ -72,11 +72,26 @@ app.factory('issuesData',['$q','$http','auth','baseUrl',function($q, $http, auth
 
     }
 
+    function editIssue(id, issue){
+        var deferred = $q.defer();
+
+        $http.put(baseUrl + 'issues/' + id,issue,{
+            headers:auth.getHeaders()
+        }).then(function(response){
+            deferred.resolve(response);
+        }, function(error){
+            deferred.reject(error);
+        });
+
+        return deferred.promise;
+    }
+
     return {
         getMyIssues:getMy,
         getIssuesByProjectId:getByProjectId,
         getIssuesById:getIssuesById,
         getComments:getComments,
-        createIssue:create
+        createIssue:create,
+        editIssue: editIssue
     }
 }]);
